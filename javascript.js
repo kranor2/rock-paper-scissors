@@ -26,6 +26,8 @@ console.log(playerSelection);
 let computerChoice = getComputerChoice(1, 3); 
 console.log(computerChoice);
 
+// convert playerSelection to integer, wherein rock = 1, paper = 2, scissors = 3
+
 function getComputerSelection() {
     if (computerChoice === 1) {
         return "rock"
@@ -41,7 +43,7 @@ function getComputerSelection() {
     }
 }
 
-let computerSelection = getComputerSelection("rock" | "paper" | "scissors" | "forfeit") // convert playerSelection to integer, wherein rock = 1, paper = 2, scissors = 3
+let computerSelection = getComputerSelection("rock" | "paper" | "scissors" | "forfeit")
 console.log(computerSelection);
 
 // (function playRound) compare playerSelection vs computerSelection based on rules (use if/else if/else)
@@ -49,7 +51,7 @@ console.log(computerSelection);
 // if computerSelection loses to (<) playerSelection => return string 'You Win! [item] beats [item]'
 // if computerSelection ties (===) playerSelection => return string 'It's a Tie! Try again.'
 
-function playRound(playerSelection, computerSelection) {
+function playRound(computerSelection, playerSelection) {
     if (computerSelection === "rock" && playerSelection === "rock") {
         return "It's a Tie! Try again."
     }
