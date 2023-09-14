@@ -7,10 +7,15 @@
 
 // Process
 // prompt: ask the user 'Choose your weapon:' with choices in default text display
-// store prompt answer in variable 'playerSelection'
+// store prompt answer in variable 'playerChoice'
 
-let playerSelection = prompt('Choose your weapon:', 'type "rock", "paper", or "scissors" here'); 
-    console.log(playerSelection); 
+let playerChoice = prompt('Choose your weapon:', 'type "rock", "paper", or "scissors" here');
+console.log(playerChoice); 
+
+// make playerChoice case-insensitive (all lower-case), store in variable 'playerSelection'
+
+let playerSelection = (playerChoice.toLowerCase());
+console.log(playerSelection);
 
 // (function getComputerChoice) browser/computer generates random integer between 1 and 3
 // store answer in variable 'computerChoice'
@@ -18,8 +23,8 @@ let playerSelection = prompt('Choose your weapon:', 'type "rock", "paper", or "s
     function getComputerChoice(min, max) {
     return Math.floor(Math.random() * (3 - 1 + 1) + 1);
 }
-var computerChoice = getComputerChoice(1, 3); 
-console.log(computerChoice)
+let computerChoice = getComputerChoice(1, 3); 
+console.log(computerChoice);
 
 function getComputerSelection() {
     if (computerChoice === 1) {
@@ -36,15 +41,15 @@ function getComputerSelection() {
     }
 }
 
-var computerSelection = getComputerSelection("rock" | "paper" | "scissors" | "forfeit") // convert playerSelection to integer, wherein rock = 1, paper = 2, scissors = 3
-console.log(computerSelection)
+let computerSelection = getComputerSelection("rock" | "paper" | "scissors" | "forfeit") // convert playerSelection to integer, wherein rock = 1, paper = 2, scissors = 3
+console.log(computerSelection);
 
 // (function playRound) compare playerSelection vs computerSelection based on rules (use if/else if/else)
 // if computerSelection beats (>) playerSelection => return string 'You Lose! [item] beats [item]'
 // if computerSelection loses to (<) playerSelection => return string 'You Win! [item] beats [item]'
 // if computerSelection ties (===) playerSelection => return string 'It's a Tie! Try again.'
 
-function playRound() {
+function playRound(playerSelection, computerSelection) {
     if (computerSelection === "rock" && playerSelection === "rock") {
         return "It's a Tie! Try again."
     }
@@ -77,8 +82,8 @@ function playRound() {
     }
 }
 
-var roundOutcome = playRound("It's a Tie! Try again." | "You Lose! Rock beats Scissors" | "You Win! Rock beats Scissors" | "You Lose! Paper beats Rock" | "You Win! Paper beats Rock" | "You Lose! Scissors beats Paper" | "You Win! Scissors beats Paper" | "Error. Please refresh the page.")
-console.log(roundOutcome)
+let roundOutcome = playRound(computerSelection, playerSelection)
+console.log(roundOutcome);
 
 // Game (function game())
 // Repeat the above 'Process' 5 times
