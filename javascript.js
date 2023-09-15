@@ -6,6 +6,14 @@
 // rock beats (>) scissors
 
 // Process
+// keep track of points and number of rounds
+
+let currentRound = 1
+let playerPoints = 0
+let computerPoints = 0
+
+function game() {
+
 // prompt: ask the user 'Choose your weapon:' with choices in default text display
 // store prompt answer in variable 'playerChoice'
 
@@ -43,7 +51,7 @@ function getComputerSelection() {
     }
 }
 
-let computerSelection = getComputerSelection("rock" | "paper" | "scissors" | "forfeit")
+let computerSelection = getComputerSelection("rock" | "paper" | "scissors" | "forfeit");
 console.log(computerSelection);
 
 // (function playRound) compare playerSelection vs computerSelection based on rules (use if/else if/else)
@@ -53,43 +61,81 @@ console.log(computerSelection);
 
 function playRound(computerSelection, playerSelection) {
     if (computerSelection === "rock" && playerSelection === "rock") {
-        return "It's a Tie! Try again."
+        return "It's a Tie! Try again.";
+        currentRound += 1;
     }
     else if (computerSelection === "rock" && playerSelection === "scissors") {
-        return "You Lose! Rock beats Scissors"
+        return "You Lose! Rock beats Scissors";
+        currentRound += 1;
+        computerPoints += 1;
     }
     else if (computerSelection === "scissors" && playerSelection === "rock") {
-        return "You Win! Rock beats Scissors"
+        return "You Win! Rock beats Scissors";
+        currentRound += 1;
+        playerPoints += 1;
     }
     else if (computerSelection === "paper" && playerSelection === "paper") {
-        return "It's a Tie! Try again."
+        return "It's a Tie! Try again.";
+        currentRound += 1;
     }
     else if (computerSelection === "paper" && playerSelection === "rock") {
-        return "You Lose! Paper beats Rock"
+        return "You Lose! Paper beats Rock";
+        currentRound += 1;
+        computerPoints += 1;
     }
     else if (computerSelection === "rock" && playerSelection === "paper") {
-        return "You Win! Paper beats Rock"
+        return "You Win! Paper beats Rock";
+        currentRound += 1;
+        playerPoints += 1; 
     }
     else if (computerSelection === "scissors" && playerSelection === "scissors") {
-        return "It's a Tie! Try again."
+        return "It's a Tie! Try again.";
+        current_round += 1;
     }
     else if (computerSelection === "scissors" && playerSelection === "paper") {
-        return "You Lose! Scissors beats Paper"
+        return "You Lose! Scissors beats Paper";
+        currentRound += 1;
+        computerPoints += 1;
     }
     else if (computerSelection === "paper" && playerSelection === "scissors") {
-        return "You Win! Scissors beats Paper"
+        return "You Win! Scissors beats Paper";
+        currentRound += 1;
+        playerPoints += 1;
     }
     else {
-        return "Error. Please refresh the page."
+        return "Error. Please refresh the page.";
     }
 }
 
 let roundOutcome = playRound(computerSelection, playerSelection)
+console.log(currentRound);
+console.log(playerPoints);
+console.log(computerPoints);
+console.log(playerSelection);
+console.log(computerSelection);
 console.log(roundOutcome);
+}
 
-// Game (function game())
-// Repeat the above 'Process' 5 times
-// for each line 15 outcome, add 1 to variable computerScore
-// for each line 16 outcome, add 1 to variable playerScore
-// after 5 rounds, if computerScore > playerScore, return string 'You Lose' and present reset button
-// after 5 rounds, if computerScore < playerScore, return string 'You Win' and present reset button
+function declareWinner(playerPoints, computerPoints) {
+    if (playerPoints > computerPoints) {
+        return "You Win! Good game.";
+    }
+    else if (playerPoints < computerPoints) {
+        return "You Lose! Good game.";
+    }
+    else {
+        return "How did you break it?!";
+    }
+}
+
+let gameOverMsg = declareWinner(playerPoints, computerPoints);
+
+// Game Loop for 5 rounds
+function gameLoop() {
+    for (i = 0; i < 5; i++) {
+        console.log(game());
+    }
+    console.log(gameOverMsg);
+}
+
+console.log(gameLoop());
