@@ -17,8 +17,7 @@ function game() {
 // prompt: ask the user 'Choose your weapon:' with choices in default text display
 // store prompt answer in variable 'playerChoice'
 
-let playerChoice = prompt('Choose your weapon:', 'type "rock", "paper", or "scissors" here');
-console.log(playerChoice); 
+let playerChoice = prompt('Choose your weapon:', 'type "rock", "paper", or "scissors" here'); 
 
 // make playerChoice case-insensitive (all lower-case), store in variable 'playerSelection'
 
@@ -32,7 +31,6 @@ console.log(playerSelection);
     return Math.floor(Math.random() * (3 - 1 + 1) + 1);
 }
 let computerChoice = getComputerChoice(1, 3); 
-console.log(computerChoice);
 
 // convert playerSelection to integer, wherein rock = 1, paper = 2, scissors = 3
 
@@ -111,8 +109,6 @@ let roundOutcome = playRound(computerSelection, playerSelection)
 console.log(currentRound);
 console.log(playerPoints);
 console.log(computerPoints);
-console.log(playerSelection);
-console.log(computerSelection);
 console.log(roundOutcome);
 }
 
