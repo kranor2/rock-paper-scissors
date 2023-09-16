@@ -87,7 +87,7 @@ function playRound(computerSelection, playerSelection) {
         return "You Win! Paper beats Rock";
     }
     else if (computerSelection === "scissors" && playerSelection === "scissors") {
-        current_round += 1;
+        currentRound += 1;
         return "It's a Tie! Try again.";
     }
     else if (computerSelection === "scissors" && playerSelection === "paper") {
@@ -112,7 +112,17 @@ console.log(computerPoints);
 console.log(roundOutcome);
 }
 
-function declareWinner(playerPoints, computerPoints) {
+// Game Loop for 5 rounds
+function gameLoop() {
+    for (i = 0; i < 5; i++) {
+        game();
+    }
+}
+
+gameLoop();
+
+function declareWinner() {
+    console.log(playerPoints, computerPoints)
     if (playerPoints > computerPoints) {
         return "You Win! Good game.";
     }
@@ -125,13 +135,4 @@ function declareWinner(playerPoints, computerPoints) {
 }
 
 let gameOverMsg = declareWinner(playerPoints, computerPoints);
-
-// Game Loop for 5 rounds
-function gameLoop() {
-    for (i = 0; i < 5; i++) {
-        console.log(game());
-    }
-    console.log(gameOverMsg);
-}
-
-console.log(gameLoop());
+console.log(gameOverMsg);
