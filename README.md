@@ -12,8 +12,7 @@ This project got me much better acquainted with debugging, proofreading, and und
 
 ## Sources
 ### Rules
-wikiHow - Play Rock Paper Scissors Lizard Spock
-    https://www.wikihow.com/Play-Rock-Paper-Scissors-Lizard-Spock
+wikiHow - [Play Rock Paper Scissors Lizard Spock](https://www.wikihow.com/Play-Rock-Paper-Scissors-Lizard-Spock)
 
 ### Images
 coming soon
