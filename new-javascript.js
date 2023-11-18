@@ -17,44 +17,6 @@ let playerPoints = 0
 let computerPoints = 0
 let playerSelection;
 
-// text display for playerPoints, currentRound, and computerPoints
-
-const playerRock = document.querySelector("#rock");
-playerRock.addEventListener("click", () => {
-    playerSelection = "rock";
-    var computerChoice = getComputerChoice(1, 5);
-    var computerSelection = getComputerSelection();
-    playRound(playerSelection, computerSelection);
-});
-const playerPaper = document.querySelector("#paper");
-playerPaper.addEventListener("click", () => {
-    var playerSelection = "paper";
-    var computerChoice = getComputerChoice(1, 5);
-    var computerSelection = getComputerSelection();
-    playRound(playerSelection, computerSelection);
-});
-const playerScissors = document.querySelector("#scissors");
-playerScissors.addEventListener("click", () => {
-    var playerSelection = "scissors";
-    var computerChoice = getComputerChoice(1, 5);
-    var computerSelection = getComputerSelection();
-    playRound(playerSelection, computerSelection);
-});
-const playerLizard = document.querySelector("#lizard");
-playerLizard.addEventListener("click", () => {
-    var playerSelection = "lizard";
-    var computerChoice = getComputerChoice(1, 5);
-    var computerSelection = getComputerSelection();
-    playRound(playerSelection, computerSelection);
-});
-const playerSpock = document.querySelector("#spock");
-playerSpock.addEventListener("click", () => {
-    var playerSelection = "spock";
-    var computerChoice = getComputerChoice(1, 5);
-    var computerSelection = getComputerSelection();
-    playRound(playerSelection, computerSelection);
-});
-
 function getComputerChoice(min, max) {
     return Math.floor(Math.random() * (5 - 1 + 1) + 1);
 }
@@ -80,6 +42,64 @@ function getComputerSelection() {
         return "forfeit"
     }
 };
+
+// text display for playerPoints, currentRound, and computerPoints
+function gameStatus(message) {
+    const container = document.querySelector("#results");
+    const content = document.createElement("div");
+    content.classList.add("content");
+    content.textContent = message;
+    container.appendChild(content);
+};
+
+const gameRestart = document.querySelector("#restart");
+gameRestart.onclick = () => history.go(0);
+
+const playerRock = document.querySelector("#rock");
+playerRock.addEventListener("click", () => {
+    playerSelection = "rock";
+    computerChoice = getComputerChoice(1, 5);
+    computerSelection = getComputerSelection();
+    playRound(playerSelection, computerSelection);
+    var message = "You chose rock."
+    gameStatus(message);
+});
+const playerPaper = document.querySelector("#paper");
+playerPaper.addEventListener("click", () => {
+    var playerSelection = "paper";
+    computerChoice = getComputerChoice(1, 5);
+    computerSelection = getComputerSelection();
+    playRound(playerSelection, computerSelection);
+    var message = "You chose paper."
+    gameStatus(message);
+});
+const playerScissors = document.querySelector("#scissors");
+playerScissors.addEventListener("click", () => {
+    var playerSelection = "scissors";
+    computerChoice = getComputerChoice(1, 5);
+    computerSelection = getComputerSelection();
+    playRound(playerSelection, computerSelection);
+    var message = "You chose scissors."
+    gameStatus(message);
+});
+const playerLizard = document.querySelector("#lizard");
+playerLizard.addEventListener("click", () => {
+    var playerSelection = "lizard";
+    computerChoice = getComputerChoice(1, 5);
+    computerSelection = getComputerSelection();
+    playRound(playerSelection, computerSelection);
+    var message = "You chose lizard.";
+    gameStatus(message);
+});
+const playerSpock = document.querySelector("#spock");
+playerSpock.addEventListener("click", () => {
+    var playerSelection = "spock";
+    computerChoice = getComputerChoice(1, 5);
+    computerSelection = getComputerSelection();
+    playRound(playerSelection, computerSelection);
+    var message = "You chose Spock.";
+    gameStatus(message);
+});
 
 let computerSelection = getComputerSelection("rock" | "paper" | "scissors" | "lizard" | "spock" | "forfeit");
 console.log(computerSelection);
