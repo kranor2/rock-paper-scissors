@@ -15,6 +15,7 @@
 let currentRound = 0
 let playerPoints = 0
 let computerPoints = 0
+let playerSelection;
 
 // text display for playerPoints, currentRound, and computerPoints
 
@@ -27,28 +28,28 @@ playerRock.addEventListener("click", () => {
 });
 const playerPaper = document.querySelector("#paper");
 playerPaper.addEventListener("click", () => {
-    playerSelection = "paper";
+    var playerSelection = "paper";
     var computerChoice = getComputerChoice(1, 5);
     var computerSelection = getComputerSelection();
     playRound(playerSelection, computerSelection);
 });
 const playerScissors = document.querySelector("#scissors");
 playerScissors.addEventListener("click", () => {
-    playerSelection = "scissors";
+    var playerSelection = "scissors";
     var computerChoice = getComputerChoice(1, 5);
     var computerSelection = getComputerSelection();
     playRound(playerSelection, computerSelection);
 });
 const playerLizard = document.querySelector("#lizard");
 playerLizard.addEventListener("click", () => {
-    playerSelection = "lizard";
+    var playerSelection = "lizard";
     var computerChoice = getComputerChoice(1, 5);
     var computerSelection = getComputerSelection();
     playRound(playerSelection, computerSelection);
 });
 const playerSpock = document.querySelector("#spock");
 playerSpock.addEventListener("click", () => {
-    playerSelection = "spock";
+    var playerSelection = "spock";
     var computerChoice = getComputerChoice(1, 5);
     var computerSelection = getComputerSelection();
     playRound(playerSelection, computerSelection);
