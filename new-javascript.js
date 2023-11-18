@@ -121,12 +121,7 @@ console.log(computerSelection);
 // rock beats (>) scissors
 
 function playRound(computerSelection, playerSelection) {
-    if (computerSelection == "rock" && playerSelection == "rock" | computerSelection == "paper" && playerSelection == "paper" | computerSelection == "scissors" && playerSelection == "scissors" | computerSelection == "lizard" && playerSelection == "lizard" | computerSelection == "spock" && playerSelection == "spock") {
-        var message2 = "It's a Tie! Try again."
-        gameStatus(message2);
-        currentRound += 1;
-    }
-    else if (computerSelection == "scissors" && playerSelection == "paper") {
+    if (computerSelection == "scissors" && playerSelection == "paper") {
         var message2 = "You Lose! Scissors cuts paper."
         gameStatus(message2);
         currentRound += 1;
@@ -246,10 +241,12 @@ function playRound(computerSelection, playerSelection) {
         currentRound += 1;
         playerPoints += 1;
     }
-    else {
-        var message2 = "Error. Please refresh the page or click the restart button."
+    else if (computerSelection == "rock" && playerSelection == "rock" | computerSelection == "paper" && playerSelection == "paper" | computerSelection == "scissors" && playerSelection == "scissors" | computerSelection == "lizard" && playerSelection == "lizard" | computerSelection == "spock" && playerSelection == "spock") {
+        var message2 = "It's a Tie! Try again."
         gameStatus(message2);
+        currentRound += 1;
     }
+
 
     if (playerPoints == 5 | computerPoints == 5) {
         gameOver();
