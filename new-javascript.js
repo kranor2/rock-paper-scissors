@@ -48,6 +48,14 @@ function gameStatus(message2) {
     container.appendChild(content);
 }
 
+function ending(message3) {
+    const container = document.querySelector("#results");
+    const content = document.createElement("div");
+    content.classList.add("content");
+    content.textContent = message3;
+    container.appendChild(content);
+}
+
 const gameRestart = document.querySelector("#restart");
 gameRestart.onclick = () => history.go(0);
 
@@ -242,4 +250,27 @@ function playRound(computerSelection, playerSelection) {
         var message2 = "Error. Please refresh the page or click the restart button."
         gameStatus(message2);
     }
+
+    if (playerPoints == 5 | computerPoints == 5) {
+        gameOver();
+    }
 };
+
+function gameOver() {
+    if (playerPoints == 5) {
+        var message3 = "You WIN the game! Click the restart button to play again."
+        ending();
+    }
+    else if (computerPoints == 5) {
+        var message3 = "You LOSE the game! Click the restart button to play again."
+        ending();
+    }
+    else if (playerPoints < 5 && computerPoints < 5) {
+        var message3 = "";
+        ending();
+    }
+    else {
+        var message3 = "How did you break it?!";
+        ending();
+    }
+}
