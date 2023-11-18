@@ -14,16 +14,6 @@ let computerPoints = 0
 
 function game() {
 
-// prompt: ask the user 'Choose your weapon:' with choices in default text display
-// store prompt answer in variable 'playerChoice'
-
-let playerChoice = prompt('Choose your weapon:', 'type "rock", "paper", "scissors", "lizard", or "spock" here'); 
-
-// make playerChoice case-insensitive (all lower-case), store in variable 'playerSelection'
-
-let playerSelection = (playerChoice.toLowerCase());
-console.log(playerSelection);
-
 // (function getComputerChoice) browser/computer generates random integer between 1 and 3
 // store answer in variable 'computerChoice'
 
@@ -83,7 +73,40 @@ function playRound(computerSelection, playerSelection) {
     }
 }
 
-let roundOutcome = playRound(computerSelection, playerSelection)
+// replacing the prompt => using buttons to obtain playerSelection
+
+const rock = document.getElementById("rock");
+rock.addEventListener("click", () => {
+    var playerSelection = "rock";
+    let roundOutcome = playRound(computerSelection, playerSelection)
+});
+const scissors = document.getElementById("scissors");
+scissors.addEventListener("click", () => {
+    var playerSelection = "scissors";
+    let roundOutcome = playRound(computerSelection, playerSelection);
+});
+const paper = document.getElementById("paper");
+paper.addEventListener("click", () => {
+    var playerSelection = "paper";
+    let roundOutcome = playRound(computerSelection, playerSelection);
+});
+const lizard = document.getElementById("lizard");
+lizard.addEventListener("click", () => {
+    var playerSelection = "lizard";
+    let roundOutcome = playRound(computerSelection, playerSelection);
+});
+const spock = document.getElementById("spock");
+spock.addEventListener("click", () => {
+    var playerSelection = "spock";
+    let roundOutcome = playRound(computerSelection, playerSelection);
+})
+
+// make playerChoice case-insensitive (all lower-case), store in variable 'playerSelection'
+
+//let playerSelection = (playerChoice.toLowerCase());
+// console.log(playerSelection);
+
+// let roundOutcome = playRound(computerSelection, playerSelection)
 console.log(currentRound);
 console.log(playerPoints);
 console.log(computerPoints);
@@ -91,13 +114,13 @@ console.log(roundOutcome);
 }
 
 // Game Loop for 5 rounds
-function gameLoop() {
-    for (i = 0; i < 5; i++) {
-        game();
-    }
-}
+// function gameLoop() {
+//    for (i = 0; i < 5; i++) {
+        //game();
+//    }
+//}
 
-gameLoop();
+// gameLoop();
 
 function declareWinner() {
     console.log(playerPoints, computerPoints)
