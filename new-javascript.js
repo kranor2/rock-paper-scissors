@@ -7,6 +7,7 @@ let computerPoints = 0
 const playerScore = document.getElementById("playerScore");
 const roundMarker = document.getElementById("roundMarker");
 const computerScore = document.getElementById("computerScore");
+const playerButtons = document.querySelectorAll(".playerButtons");
 
 function getComputerChoice(min, max) {
     return Math.floor(Math.random() * (5 - 1 + 1) + 1);
@@ -273,6 +274,29 @@ function playRound(computerSelection, playerSelection) {
     roundMarker.innerHTML = `${currentRound}`;
     computerScore.innerHTML = `${computerPoints}`;
 
+    if (playerPoints === 5) {
+        playerButtons.disabled = true;
+        var gameOutcome = "You WIN the game! Click the restart button to play again."
+        const container = document.querySelector("#victory");
+        const content = document.createElement("div");
+        content.classList.add("content");
+        content.textContent = gameOutcome;
+        container.appendChild(content);
+    }
+    else if (computerPoints === 5) {
+        playerButtons.disabled = true;
+        var gameOutcome = "You LOSE the game! Click the restart button to play again."
+        const container = document.querySelector("#victory");
+        const content = document.createElement("div");
+        content.classList.add("content");
+        content.textContent = gameOutcome;
+        container.appendChild(content);
+    }
+    else {
+        playerButtons.disabled = false;
+        var gameOutcome = ""
+    }
+    
     if (playerPoints === 5 || computerPoints === 5) {
         gameOver();
     }
