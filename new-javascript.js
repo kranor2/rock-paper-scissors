@@ -112,25 +112,6 @@ playerSpock.addEventListener("click", () => {
 let computerSelection = getComputerSelection("rock" | "paper" | "scissors" | "lizard" | "spock" | "forfeit");
 console.log(computerSelection);
 
-function gameOver() {
-    if (playerPoints === 5) {
-        var message3 = "You WIN the game! Click the restart button to play again."
-        ending();
-    }
-    else if (computerPoints === 5) {
-        var message3 = "You LOSE the game! Click the restart button to play again."
-        ending();
-    }
-    else if (playerPoints < 5 && computerPoints < 5) {
-        var message3 = "";
-        ending();
-    }
-    else {
-        var message3 = "How did you break it?!";
-        ending();
-    }
-};
-
 // Rules
 // scissors beats (>) paper
 // paper beats (>) rock
@@ -275,7 +256,9 @@ function playRound(computerSelection, playerSelection) {
     computerScore.innerHTML = `${computerPoints}`;
 
     if (playerPoints === 5) {
-        playerButtons.disabled = true;
+        function gameOver(event) {
+            playerButtons.removeEventListener("click", gameOver);
+        }
         var gameOutcome = "You WIN the game! Click the restart button to play again."
         const container = document.querySelector("#victory");
         const content = document.createElement("div");
@@ -284,7 +267,9 @@ function playRound(computerSelection, playerSelection) {
         container.appendChild(content);
     }
     else if (computerPoints === 5) {
-        playerButtons.disabled = true;
+        function gameOver(event) {
+            playerButtons.removeEventListener("click", gameOver);
+        }
         var gameOutcome = "You LOSE the game! Click the restart button to play again."
         const container = document.querySelector("#victory");
         const content = document.createElement("div");
@@ -293,11 +278,6 @@ function playRound(computerSelection, playerSelection) {
         container.appendChild(content);
     }
     else {
-        playerButtons.disabled = false;
         var gameOutcome = ""
-    }
-    
-    if (playerPoints === 5 || computerPoints === 5) {
-        gameOver();
     }
 };
