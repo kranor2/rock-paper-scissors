@@ -3,7 +3,10 @@
 let currentRound = 0
 let playerPoints = 0
 let computerPoints = 0
-let playerSelection;
+
+const playerScore = document.getElementById("playerScore");
+const roundMarker = document.getElementById("roundMarker");
+const computerScore = document.getElementById("computerScore");
 
 function getComputerChoice(min, max) {
     return Math.floor(Math.random() * (5 - 1 + 1) + 1);
@@ -107,6 +110,25 @@ playerSpock.addEventListener("click", () => {
 
 let computerSelection = getComputerSelection("rock" | "paper" | "scissors" | "lizard" | "spock" | "forfeit");
 console.log(computerSelection);
+
+function gameOver() {
+    if (playerPoints === 5) {
+        var message3 = "You WIN the game! Click the restart button to play again."
+        ending();
+    }
+    else if (computerPoints === 5) {
+        var message3 = "You LOSE the game! Click the restart button to play again."
+        ending();
+    }
+    else if (playerPoints < 5 && computerPoints < 5) {
+        var message3 = "";
+        ending();
+    }
+    else {
+        var message3 = "How did you break it?!";
+        ending();
+    }
+};
 
 // Rules
 // scissors beats (>) paper
@@ -247,27 +269,11 @@ function playRound(computerSelection, playerSelection) {
         currentRound += 1;
     }
 
+    playerScore.innerHTML = `${playerPoints}`;
+    roundMarker.innerHTML = `${currentRound}`;
+    computerScore.innerHTML = `${computerPoints}`;
 
     if (playerPoints === 5 || computerPoints === 5) {
         gameOver();
     }
 };
-
-function gameOver() {
-    if (playerPoints === 5) {
-        var message3 = "You WIN the game! Click the restart button to play again."
-        ending();
-    }
-    else if (computerPoints === 5) {
-        var message3 = "You LOSE the game! Click the restart button to play again."
-        ending();
-    }
-    else if (playerPoints < 5 && computerPoints < 5) {
-        var message3 = "";
-        ending();
-    }
-    else {
-        var message3 = "How did you break it?!";
-        ending();
-    }
-}
