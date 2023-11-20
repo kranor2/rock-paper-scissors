@@ -256,13 +256,11 @@ function playRound(computerSelection, playerSelection) {
     computerScore.innerHTML = `${computerPoints}`;
 
     if (playerPoints === 5) {
-        function gameOver(event) {
-            playerRock.removeEventListener("click", gameOver);
-            playerPaper.removeEventListener("click", gameOver);
-            playerScissors.removeEventListener("click", gameOver);
-            playerLizard.removeEventListener("click", gameOver);
-            playerSpock.removeEventListener("click", gameOver);
-        }
+        playerRock.disabled = true;
+        playerPaper.disabled = true;
+        playerScissors.disabled = true;
+        playerLizard.disabled = true;
+        playerSpock.disabled = true;
         var gameOutcome = "You WIN the game! Click the restart button to play again."
         const container = document.querySelector("#victory");
         const content = document.createElement("div");
@@ -271,13 +269,11 @@ function playRound(computerSelection, playerSelection) {
         container.appendChild(content);
     }
     else if (computerPoints === 5) {
-        function gameOver(event) {
-            playerRock.removeEventListener("click", gameOver);
-            playerPaper.removeEventListener("click", gameOver);
-            playerScissors.removeEventListener("click", gameOver);
-            playerLizard.removeEventListener("click", gameOver);
-            playerSpock.removeEventListener("click", gameOver);
-        }
+        playerRock.disabled = true;
+        playerPaper.disabled = true;
+        playerScissors.disabled = true;
+        playerLizard.disabled = true;
+        playerSpock.disabled = true;
         var gameOutcome = "You LOSE the game! Click the restart button to play again."
         const container = document.querySelector("#victory");
         const content = document.createElement("div");
