@@ -257,7 +257,11 @@ function playRound(computerSelection, playerSelection) {
 
     if (playerPoints === 5) {
         function gameOver(event) {
-            playerButtons.removeEventListener("click", gameOver);
+            playerRock.removeEventListener("click", gameOver);
+            playerPaper.removeEventListener("click", gameOver);
+            playerScissors.removeEventListener("click", gameOver);
+            playerLizard.removeEventListener("click", gameOver);
+            playerSpock.removeEventListener("click", gameOver);
         }
         var gameOutcome = "You WIN the game! Click the restart button to play again."
         const container = document.querySelector("#victory");
@@ -268,7 +272,11 @@ function playRound(computerSelection, playerSelection) {
     }
     else if (computerPoints === 5) {
         function gameOver(event) {
-            playerButtons.removeEventListener("click", gameOver);
+            playerRock.removeEventListener("click", gameOver);
+            playerPaper.removeEventListener("click", gameOver);
+            playerScissors.removeEventListener("click", gameOver);
+            playerLizard.removeEventListener("click", gameOver);
+            playerSpock.removeEventListener("click", gameOver);
         }
         var gameOutcome = "You LOSE the game! Click the restart button to play again."
         const container = document.querySelector("#victory");
