@@ -1,5 +1,6 @@
 // Rock Paper Scissors Lizard Spock
 
+// set initial variables, constants for appended text content
 let currentRound = 0
 let playerPoints = 0
 let computerPoints = 0
@@ -7,8 +8,8 @@ let computerPoints = 0
 const playerScore = document.getElementById("playerScore");
 const roundMarker = document.getElementById("roundMarker");
 const computerScore = document.getElementById("computerScore");
-const playerButtons = document.querySelectorAll(".playerButtons");
 
+// set up computer's game participation
 function getComputerChoice(min, max) {
     return Math.floor(Math.random() * (5 - 1 + 1) + 1);
 }
@@ -35,7 +36,9 @@ function getComputerSelection() {
     }
 };
 
-// text display for playerPoints, currentRound, and computerPoints
+let computerSelection = getComputerSelection("rock" | "paper" | "scissors" | "lizard" | "spock" | "forfeit");
+
+// text display for game log
 function playerChoice(message1) {
     const container = document.querySelector("#results");
     const content = document.createElement("div");
@@ -52,17 +55,11 @@ function gameStatus(message2) {
     container.appendChild(content);
 }
 
-function ending(message3) {
-    const container = document.querySelector("#results");
-    const content = document.createElement("div");
-    content.classList.add("content");
-    content.textContent = message3;
-    container.appendChild(content);
-}
-
+// reset button
 const gameRestart = document.querySelector("#restart");
 gameRestart.onclick = () => history.go(0);
 
+// event listener for gameplay using UI
 const playerRock = document.querySelector("#rock");
 playerRock.addEventListener("click", () => {
     playerSelection = "rock";
@@ -109,9 +106,6 @@ playerSpock.addEventListener("click", () => {
     playRound(playerSelection, computerSelection);
 });
 
-let computerSelection = getComputerSelection("rock" | "paper" | "scissors" | "lizard" | "spock" | "forfeit");
-console.log(computerSelection);
-
 // Rules
 // scissors beats (>) paper
 // paper beats (>) rock
@@ -124,6 +118,8 @@ console.log(computerSelection);
 // spock beats (>) rock
 // rock beats (>) scissors
 
+// gameplay: rounds and standoff outcomes -> text display/update for score and round markers
+// display endgame outcome in victory banner, disable buttons -> force reset to play again
 function playRound(computerSelection, playerSelection) {
     if (computerSelection === "scissors" && playerSelection === "paper") {
         var message2 = "You Lose! Scissors cuts paper."
