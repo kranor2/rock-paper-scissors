@@ -12,4 +12,24 @@ h3 {
 
 button {
     font-family: "Smooch Sans", sans-serif;
+    font-size: 16px;
+}
+
+#playerScore {
+    font-family: "Smooch Sans", sans-serif;
+    font-size: 52px;
+}
+
+#computerScore {
+    font-family: "Smooch Sans", sans-serif;
+    font-size: 52px;
+}
+
+#roundMarker {
+    font-family:"Smooch Sans", sans-serif;
+    font-size: 52px;
+}
+
+#results {
+    font-family: "Smooch Sans", sans-serif;
 }
