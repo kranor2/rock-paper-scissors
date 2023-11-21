@@ -21,9 +21,25 @@ button {
 
 .gameStatus {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
+
+.player {
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.round {
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.computer {
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
 .playerButtons {
     display: flex;
     justify-content: space-between;
