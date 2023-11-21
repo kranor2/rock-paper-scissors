@@ -1,9 +1,13 @@
 h1 {
     font-family: "Press Start 2P", sans-serif;
+    display: flex;
+    justify-content: center;
 }
 
 h2 {
     font-family: "Press Start 2P", sans-serif;
+    display: flex;
+    justify-content: center;
 }
 
 h3 {
@@ -13,6 +17,17 @@ h3 {
 button {
     font-family: "Smooch Sans", sans-serif;
     font-size: 16px;
+}
+
+.gameStatus {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.playerButtons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 #playerScore {
@@ -37,4 +52,12 @@ button {
 #victory {
     font-family: "Smooch Sans", sans-serif;
     font-size: 41.6px;
+}
+
+#restart {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
