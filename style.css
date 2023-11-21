@@ -46,6 +46,12 @@ button {
     align-items: center;
 }
 
+.endgame {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #playerScore {
     font-family: "Smooch Sans", sans-serif;
     font-size: 52px;
