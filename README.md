@@ -10,13 +10,12 @@ More recently, I have elaborated on this project by designing and implementing a
 
 ## Sources
 ### Rules
-wikiHow - [Play Rock Paper Scissors Lizard Spock](https://www.wikihow.com/Play-Rock-Paper-Scissors-Lizard-Spock)
+#### wikiHow - [Play Rock Paper Scissors Lizard Spock](https://www.wikihow.com/Play-Rock-Paper-Scissors-Lizard-Spock)
 
 ### Images
-coming soon
-Rock: "Rock - Goron Mask Pixel Art" (SeekPNG)
-Paper: "Pixelated paper scroll" by captainvector (Adobe Stock)
-Scissors: "Rending Scissors" by slice (Pixilart)
-Lizard: "Pixelated Iguana" by Collaborapix Studio (Vecteezy)
-Spock: "RIP Leonard Nimoy" by Iconfactory (Dribbble)
-Restart: "ui-restart-button" by gabrieltavares (Pixilart)    
+#### Rock: "Rock - Goron Mask Pixel Art" (SeekPNG)
+#### Paper: "Pixelated paper scroll" by captainvector (Adobe Stock)
+#### Scissors: "Rending Scissors" by slice (Pixilart)
+#### Lizard: "Pixelated Iguana" by Collaborapix Studio (Vecteezy)
+#### Spock: "RIP Leonard Nimoy" by Iconfactory (Dribbble)
+#### Restart: "ui-restart-button" by gabrieltavares (Pixilart)    
